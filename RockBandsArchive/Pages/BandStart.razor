@@ -1,0 +1,81 @@
+﻿@page "/bands"
+@using RockBandsArchive.Data;
+@inject BandService bands
+@inject NavigationManager navigationManager
+
+<PageTitle>Bands</PageTitle>
+<h3>A list of your favorite bands</h3>
+
+@if (isBandDeleted)
+{
+    <div class="alert alert-success" role="alert">
+        @deleteMessage
+    </div>
+}
+
+@if (bandsList == null)
+{
+    <p><em>Loading Bands...</em></p>
+}
+else
+{
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Band Name</th>
+                <th>Band Origen</th>
+                <th>Genre</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var band in bandsList)
+            {
+                <tr>
+                    <td>@band.Name</td>
+                    <td>@band.Origen</td>
+                    <td>@band.Genre.Name</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => EditBand(band.BandId)">Edit</button>
+                        
+                    </td>
+                    <td>
+                        
+                        <button class="btn btn-danger" @onclick="() => DeleteBand(band)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+}
+
+
+@code {
+    private List<Band>? bandsList;//List containg data from service
+    protected override async Task OnInitializedAsync()
+    {
+        bandsList = await bands.GetBandlist();
+    }
+
+    private void EditBand(int bandId)
+    {
+        navigationManager.NavigateTo($"/bands/edit/{bandId}");
+    }
+
+    private bool isBandDeleted = false;
+    private string deleteMessage = "";
+
+    private async Task DeleteBand(Band band)
+    {
+        
+        await bands.DeleteBand(band); 
+        isBandDeleted = true;
+        deleteMessage = "Band deleted successfully";
+        bandsList.Remove(band);
+    }
+
+
+}

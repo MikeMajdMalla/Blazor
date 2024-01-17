@@ -1,0 +1,61 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RockBandsArchive
+build_property.RootNamespace = RockBandsArchive
+build_property.ProjectDir = C:\Users\mikem\OneDrive\Desktop\RockBandsArchive\RockBandsArchive\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\mikem\OneDrive\Desktop\RockBandsArchive\RockBandsArchive
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Pages/AddBand.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQmFuZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Pages/BandStart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmFuZFN0YXJ0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Pages/EditBand.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEJhbmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-r0kjk80lja
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-47ivvwu2x1
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mikem/OneDrive/Desktop/RockBandsArchive/RockBandsArchive/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

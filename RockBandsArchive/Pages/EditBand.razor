@@ -1,0 +1,72 @@
+﻿@page "/bands/edit/{Id}"
+@using RockBandsArchive.Data;
+@inject BandService bands
+<h3>Edit Band</h3>
+
+@if (band != null)
+{
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" @bind="band.Name" />
+        </div>
+        <div class="form-group">
+            <label for="description">Origen</label>
+            <input type="text" class="form-control" id="description" @bind="band.Origen" />
+        </div>
+        <div class="form-group">
+            <label for="genreId">Genre</label>
+            <select class="form-control" id="genreId" @bind="band.GenreId">
+                @foreach (var genre in genres)
+                {
+                    <option value="@genre.GenreId">@genre.Name</option>
+                }
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" @onclick="UpdateBand">Update</button>
+       
+    </form>
+}
+else
+{
+    <p>Band not found.</p>
+}
+
+@code {
+    private Band band = new Band();
+    private List<Genre> genres = new List<Genre>();
+
+    [Parameter]
+    public string Id { get; set; }
+
+    // Inject your BandService here
+    [Inject]
+    private BandService bandService { get; set; }
+
+    [Inject]
+    private NavigationManager navigationManager { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Load the band and genre data when the component is initialized
+        band = await bandService.GetBandById(int.Parse(Id));
+        genres = await bandService.GetGenrelist();
+    }
+
+    private async Task UpdateBand()
+    {
+        try
+        {
+            // Call the UpdateBand method from your BandService
+            await bandService.EditBand(band);
+
+            // Redirect to the band page after successfully updating the band
+            navigationManager.NavigateTo($"/bands/");
+        }
+        catch (Exception ex)
+        {
+            
+        }
+    }
+}
+

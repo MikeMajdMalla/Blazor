@@ -1,0 +1,68 @@
+﻿@page "/addband"
+@using RockBandsArchive.Data
+@inject BandService bands
+
+
+@if (isBandAdded)
+{
+    <div class="alert alert-success" role="alert">
+        Band added successfully!
+    </div>
+}
+<div class="custom-form-container">
+    <h3>Add Band</h3>
+
+<form class="custom-form">
+    <div class="form-group">
+        <label for="bandName">Band Name:</label>
+        <input type="text" id="bandName" class="form-control" @bind="newBand.Name" />
+    </div>
+    <div class="form-group">
+        <label for="bandOrigen">Band Origin:</label>
+        <input type="text" id="bandOrigen" class="form-control" @bind="newBand.Origen" />
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre:</label>
+        <select class="form-control" id="genre" @bind="newBand.GenreId">
+            <option value="0">--select--</option>
+            @foreach (var genre in genres)
+            {
+                <option value="@genre.GenreId">@genre.Name</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" @onclick="AddNewBand">Add Band</button>
+</form>
+</div>
+
+
+@code {
+    [Inject]
+    private NavigationManager navigationManager { get; set; }
+
+    private Band newBand = new Band();
+    List<Genre> genres = new List<Genre>();
+    private bool isBandAdded = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        genres = await bands.GetGenrelist();
+    }
+
+    private async Task AddNewBand()
+    {
+        if (!string.IsNullOrWhiteSpace(newBand.Name))
+        {
+            await bands.AddBand(newBand);
+            newBand = new Band(); // Reset the newBand object
+            isBandAdded = true;
+            navigationManager.NavigateTo($"/bands/");
+        }
+        else
+        {
+            // You can handle validation or display an error message here
+        }
+    }
+}
+
